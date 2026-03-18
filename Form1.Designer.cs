@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            tajmer = new Label();
             stop = new Button();
             start = new Button();
             textBox2 = new TextBox();
@@ -38,11 +39,12 @@
             sekundy = new Label();
             minuty = new Label();
             tabPage2 = new TabPage();
-            timer1 = new System.Windows.Forms.Timer(components);
-            tajmer = new Label();
-            tajmerstoper = new Label();
-            startstoper = new Button();
+            reset = new Button();
             stopstopy = new Button();
+            startstoper = new Button();
+            tajmerstoper = new Label();
+            minutnik = new System.Windows.Forms.Timer(components);
+            stoper = new System.Windows.Forms.Timer(components);
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -76,6 +78,17 @@
             tabPage1.Text = "minutnik";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
+            // 
+            // tajmer
+            // 
+            tajmer.BackColor = Color.LightSeaGreen;
+            tajmer.Font = new Font("Segoe UI", 68F);
+            tajmer.Location = new Point(230, 210);
+            tajmer.Name = "tajmer";
+            tajmer.Size = new Size(271, 121);
+            tajmer.TabIndex = 6;
+            tajmer.Text = "00.00";
+            tajmer.Click += tajmer_Click;
             // 
             // stop
             // 
@@ -138,6 +151,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(reset);
             tabPage2.Controls.Add(stopstopy);
             tabPage2.Controls.Add(startstoper);
             tabPage2.Controls.Add(tajmerstoper);
@@ -149,41 +163,15 @@
             tabPage2.Text = "stoper";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // reset
             // 
-            timer1.Tick += timer1_Tick;
-            // 
-            // tajmer
-            // 
-            tajmer.BackColor = Color.LightSeaGreen;
-            tajmer.Font = new Font("Segoe UI", 68F);
-            tajmer.Location = new Point(230, 210);
-            tajmer.Name = "tajmer";
-            tajmer.Size = new Size(271, 121);
-            tajmer.TabIndex = 6;
-            tajmer.Text = "00.00";
-            tajmer.Click += tajmer_Click;
-            // 
-            // tajmerstoper
-            // 
-            tajmerstoper.BackColor = Color.Tomato;
-            tajmerstoper.Font = new Font("Segoe UI", 67F);
-            tajmerstoper.ForeColor = SystemColors.Desktop;
-            tajmerstoper.Location = new Point(230, 210);
-            tajmerstoper.Name = "tajmerstoper";
-            tajmerstoper.Size = new Size(268, 124);
-            tajmerstoper.TabIndex = 0;
-            tajmerstoper.Text = "00.00";
-            // 
-            // startstoper
-            // 
-            startstoper.BackColor = Color.Chartreuse;
-            startstoper.Location = new Point(230, 124);
-            startstoper.Name = "startstoper";
-            startstoper.Size = new Size(75, 23);
-            startstoper.TabIndex = 1;
-            startstoper.Text = "start";
-            startstoper.UseVisualStyleBackColor = false;
+            reset.Location = new Point(330, 124);
+            reset.Name = "reset";
+            reset.Size = new Size(75, 23);
+            reset.TabIndex = 3;
+            reset.Text = "Reset";
+            reset.UseVisualStyleBackColor = true;
+            reset.Click += button1_Click;
             // 
             // stopstopy
             // 
@@ -195,6 +183,34 @@
             stopstopy.TabIndex = 2;
             stopstopy.Text = "stop";
             stopstopy.UseVisualStyleBackColor = false;
+            stopstopy.Click += stopstopy_Click;
+            // 
+            // startstoper
+            // 
+            startstoper.BackColor = Color.Chartreuse;
+            startstoper.Location = new Point(230, 124);
+            startstoper.Name = "startstoper";
+            startstoper.Size = new Size(75, 23);
+            startstoper.TabIndex = 1;
+            startstoper.Text = "start";
+            startstoper.UseVisualStyleBackColor = false;
+            startstoper.Click += startstoper_Click;
+            // 
+            // tajmerstoper
+            // 
+            tajmerstoper.BackColor = Color.Tomato;
+            tajmerstoper.Font = new Font("Segoe UI", 67F);
+            tajmerstoper.ForeColor = SystemColors.Desktop;
+            tajmerstoper.Location = new Point(230, 210);
+            tajmerstoper.Name = "tajmerstoper";
+            tajmerstoper.Size = new Size(268, 124);
+            tajmerstoper.TabIndex = 0;
+            tajmerstoper.Text = "00.00";
+            tajmerstoper.Click += tajmerstoper_Click;
+            // 
+            // minutnik
+            // 
+            minutnik.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -222,10 +238,12 @@
         private Label sekundy;
         private Label minuty;
         private TabPage tabPage2;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer minutnik;
         private Label tajmer;
         private Label tajmerstoper;
         private Button startstoper;
         private Button stopstopy;
+        private Button reset;
+        private System.Windows.Forms.Timer stoper;
     }
 }

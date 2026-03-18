@@ -14,3 +14,4 @@ C:\Users\1ap\source\repos\tajmer\tajmer\obj\Debug\net8.0-windows\refint\tajmer.d
 C:\Users\1ap\source\repos\tajmer\tajmer\obj\Debug\net8.0-windows\tajmer.pdb
 C:\Users\1ap\source\repos\tajmer\tajmer\obj\Debug\net8.0-windows\tajmer.genruntimeconfig.cache
 C:\Users\1ap\source\repos\tajmer\tajmer\obj\Debug\net8.0-windows\ref\tajmer.dll
+C:\Users\1ap\source\repos\tajmer\tajmer\obj\Debug\net8.0-windows\tajmer.Properties.Resources.resources
